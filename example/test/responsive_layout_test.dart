@@ -121,8 +121,11 @@ void main() {
         matching: find.byType(AppButton),
       ),
     );
-    expect(scrambleBtn.top, closeTo(resetCubeBtn.top, 1),
-        reason: '三个核心操作应在同一行，不能换行');
+    expect(
+      scrambleBtn.top,
+      closeTo(resetCubeBtn.top, 1),
+      reason: '三个核心操作应在同一行，不能换行',
+    );
     expect(tester.takeException(), isNull);
   });
 
