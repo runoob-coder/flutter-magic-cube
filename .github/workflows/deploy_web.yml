@@ -6,7 +6,6 @@ on:
     paths:
       - "example/**"
       - "lib/**"
-      - "fonts/**"
       - "pubspec.yaml"
       - ".github/workflows/deploy_web.yml"
   pull_request:
@@ -14,7 +13,6 @@ on:
     paths:
       - "example/**"
       - "lib/**"
-      - "fonts/**"
       - "pubspec.yaml"
       - ".github/workflows/deploy_web.yml"
   workflow_dispatch:

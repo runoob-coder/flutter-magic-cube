@@ -1,7 +1,9 @@
 # magic_cube
 
 <div align="center">
-  [![magic_cube][banner-img]][repo]
+  <a href="https://github.com/runoob-coder/flutter-magic-cube" target="_blank" rel="noopener"> 
+    <img src="https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/rubiks-magic-cube.png" width="200" style="width: 200px;" alt="magic_cube">
+  </a>
 </div>
 
 纯 Flutter 实现的三维魔方组件：拖拽贴纸即可拧动对应层，在魔方之外拖拽可自由旋转视角，也能用标准记号从代码驱动每一步转动。
@@ -14,10 +16,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/runoob-coder/flutter-magic-cube.svg?style=social)][repo]
 
 Language: [English](README.md) | 简体中文
-
-<div align="center">
-  ![magic_cube 渲染效果][demo-img]
-</div>
 
 > 🖼️ 全部由 `CustomPainter` 在 2D Canvas 上绘制 —— 不依赖 3D 引擎，也不需要外部素材。
 
@@ -343,11 +341,7 @@ cd example && flutter analyze && flutter test
 
 | 赞赏码 WeChat | 支付宝 Alipay |
 | :---: | :---: |
-| ![赞赏码 WeChat][appreciate-img] | ![支付宝 Alipay][alipay-img] |
+| <img src="https://github.com/runoob-coder/runoob-coder/raw/main/public/appreciate.avif" width="200" style="width: 200px;" alt="赞赏码 WeChat" /> | <img src="https://github.com/runoob-coder/runoob-coder/raw/main/public/alipay.avif" width="200" style="width: 200px;" alt="支付宝 Alipay" /> |
 
 [repo]: https://github.com/runoob-coder/flutter-magic-cube
-[banner-img]: https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/rubiks-magic-cube.png
-[demo-img]: https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/doc/demo.png
-[appreciate-img]: https://github.com/runoob-coder/runoob-coder/raw/main/public/appreciate.avif
-[alipay-img]: https://github.com/runoob-coder/runoob-coder/raw/main/public/alipay.avif
 [pub]: https://pub.dev/packages/magic_cube

@@ -1,7 +1,9 @@
 # magic_cube
 
 <div align="center">
-  [![magic_cube][banner-img]][repo]
+  <a href="https://github.com/runoob-coder/flutter-magic-cube" target="_blank" rel="noopener"> 
+    <img src="https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/rubiks-magic-cube.png" width="200" style="width: 200px;" alt="magic_cube">
+  </a>
 </div>
 
 A pure-Flutter 3D Rubik's cube widget: drag a sticker to turn its layer, drag outside the cube to orbit the view, or drive every move from code with standard notation.
@@ -14,10 +16,6 @@ A pure-Flutter 3D Rubik's cube widget: drag a sticker to turn its layer, drag ou
 [![GitHub stars](https://img.shields.io/github/stars/runoob-coder/flutter-magic-cube.svg?style=social)][repo]
 
 Language: English | [简体中文](https://github.com/runoob-coder/flutter-magic-cube/blob/main/README_CN.md)
-
-<div align="center">
-  ![Cube rendered by magic_cube][demo-img]
-</div>
 
 > 🖼️ Rendered entirely by `CustomPainter` on a 2D canvas — no 3D engine, no external assets.
 
@@ -343,11 +341,7 @@ If `magic_cube` helps you build something fun, a star or a like takes only a sec
 
 | Buy Me a Coffee | Donate with PayPal |
 | :---: | :---: |
-| [![Buy Me a Coffee at ko-fi.com][kofi-img]](https://ko-fi.com/noob_coder) | [![Donate with PayPal][paypal-img]](https://paypal.me/runoobcoder) |
+| <a href="https://ko-fi.com/noob_coder" target="_blank" rel="noopener"><img src="https://github.com/runoob-coder/runoob-coder/raw/main/public/kofi6.webp" width="200" style="width: 200px;" alt="Buy Me a Coffee at ko-fi.com" /></a> | <a href="https://paypal.me/runoobcoder" target="_blank" rel="noopener"><img src="https://github.com/runoob-coder/runoob-coder/raw/main/public/paypal-donate-button.avif" width="200" style="width: 200px;" alt="Donate with PayPal" /></a> |
 
 [repo]: https://github.com/runoob-coder/flutter-magic-cube
-[banner-img]: https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/rubiks-magic-cube.png
-[demo-img]: https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/doc/demo.png
-[kofi-img]: https://github.com/runoob-coder/runoob-coder/raw/main/public/kofi6.webp
-[paypal-img]: https://github.com/runoob-coder/runoob-coder/raw/main/public/paypal-donate-button.avif
 [pub]: https://pub.dev/packages/magic_cube
