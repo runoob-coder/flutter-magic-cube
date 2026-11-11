@@ -328,12 +328,8 @@ class _DemoAppBarState extends State<DemoAppBar> {
     return Padding(
       padding: const EdgeInsets.only(bottom: AppPalette.spaceXs),
       child: Material(
-        color: selected
-            ? AppPalette.surfaceStrong
-            : const Color(0x00000000),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        color: selected ? AppPalette.surfaceStrong : const Color(0x00000000),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: onTap,
@@ -362,11 +358,7 @@ class _DemoAppBarState extends State<DemoAppBar> {
                     ),
                   ),
                   if (selected)
-                    const Icon(
-                      Icons.check,
-                      size: 16,
-                      color: AppPalette.accent,
-                    ),
+                    const Icon(Icons.check, size: 16, color: AppPalette.accent),
                 ],
               ),
             ),
@@ -376,10 +368,7 @@ class _DemoAppBarState extends State<DemoAppBar> {
     );
   }
 
-  Widget _menuPanel(
-    Widget child, {
-    double padding = AppPalette.panelPadding,
-  }) {
+  Widget _menuPanel(Widget child, {double padding = AppPalette.panelPadding}) {
     return Container(
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
