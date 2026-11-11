@@ -161,10 +161,7 @@ class _DemoAppBarState extends State<DemoAppBar> {
       ],
     );
     final List<Widget> trailing = <Widget>[
-      if (showMenuButton)
-        _menuButton(l10n)
-      else
-        widget.quickActions,
+      if (showMenuButton) _menuButton(l10n) else widget.quickActions,
       if (_languageEnabled) ...<Widget>[
         const SizedBox(width: AppPalette.spaceXs),
         _languageButton(l10n),
@@ -306,11 +303,7 @@ class _DemoAppBarState extends State<DemoAppBar> {
             width: AppPalette.minTouchTarget,
             height: AppPalette.minTouchTarget,
             child: Center(
-              child: Icon(
-                Icons.language,
-                size: 18,
-                color: foreground,
-              ),
+              child: Icon(Icons.language, size: 18, color: foreground),
             ),
           ),
         ),
