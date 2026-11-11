@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <title>magic_cube — 3D Rubik's Cube Widget for Flutter | Live Demo</title>
+  <meta name="description" content="A real 3D Rubik's cube for Flutter: drag a sticker to turn that layer, drag outside to orbit with inertia, or run standard notation. Live Web demo. 纯 Flutter 实现的 3D 魔方组件，拖拽转动任意一层，无需 3D 引擎或原生插件。">
+  <meta name="keywords" content="Flutter,Flutter Web,Rubik's cube,Rubiks cube,3D Rubik's cube,3D cube widget,magic cube,魔方,三阶魔方,3D 魔方,魔方组件,Flutter 组件,Flutter widget,CustomPainter,pure Flutter 3D,cube rotation,layer turn,scramble,CFOP,standard notation,cube timer,speedcubing,cupertino,demo,example,noob-coder,菜鸟码农">
+  <meta name="author" content="noob-coder">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#121216">
+  <meta name="theme-color" content="#121216" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#121216" media="(prefers-color-scheme: light)">
+
+  <!-- Open Graph (Facebook / WeChat / Slack / Discord …) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="magic_cube">
+  <meta property="og:title" content="magic_cube — 3D Rubik's Cube Widget for Flutter">
+  <meta property="og:description" content="Drag a sticker to turn that layer, drag outside to orbit, or use standard notation. A real 3D Rubik's cube drawn with pure Flutter — no 3D engine, no plugins.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A 3D Rubik's cube rendered by the magic_cube Flutter widget">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="magic_cube — 3D Rubik's Cube Widget for Flutter">
+  <meta name="twitter:description" content="A real 3D Rubik's cube for Flutter: turn layers by dragging stickers, orbit with inertia, drive it with R U R' U'. Pure CustomPainter — no 3D engine.">
+  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:image:alt" content="A 3D Rubik's cube rendered by the magic_cube Flutter widget">
+
+  <!-- iOS / mobile web app -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Magic Cube">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Structured data: helps search engines understand this is a free app/demo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "magic_cube",
+    "alternateName": "Flutter 3D Rubik's Cube widget",
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "Flutter widget",
+    "operatingSystem": "Android, iOS, macOS, Windows, Linux, Web",
+    "description": "A 3D Rubik's cube widget built with pure Flutter: drag a sticker to turn that layer, drag outside the cube to orbit with inertia, and drive it with standard notation (R U R' U' F2 M E S x y z). No 3D engine, no plugins.",
+    "keywords": "Flutter, Rubik's cube, 3D widget, CustomPainter, 魔方, Flutter 组件",
+    "url": "https://github.com/runoob-coder/flutter-magic-cube",
+    "sameAs": [
+      "https://github.com/runoob-coder/flutter-magic-cube"
+    ],
+    "image": "og-image.png",
+    "inLanguage": ["en", "zh"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "noob-coder",
+      "url": "https://github.com/runoob-coder"
+    }
+  }
+  </script>
+
+  <style>
+    /* Flutter paints over the whole viewport; matching its dark backdrop here
+       avoids a white flash while main.dart.js loads. */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #121216;
+      color: #F6F6F8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      overscroll-behavior: none;
+    }
+    noscript .fallback {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      line-height: 1.65;
+    }
+    noscript h1 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+    noscript p {
+      color: #9B9BA6;
+      margin: 0 0 12px;
+    }
+    noscript ul {
+      color: #9B9BA6;
+      padding-left: 20px;
+      margin: 0 0 16px;
+    }
+    noscript a {
+      color: #FFD500;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+
+  <noscript>
+    <div class="fallback">
+      <h1>magic_cube — 3D Rubik's Cube widget for Flutter</h1>
+      <p>
+        This page is an interactive Flutter Web demo, so it needs JavaScript.
+        The widget itself is a real 3D Rubik's cube drawn on a 2D canvas with
+        <code>CustomPainter</code> — no 3D engine and no native plugins:
+      </p>
+      <ul>
+        <li>drag a sticker — turns that layer, snapping to 90°;</li>
+        <li>drag outside the cube — orbits the whole cube, with inertial decay;</li>
+        <li>standard notation <code>R U R' U' F2 M E S x y z</code> can be executed programmatically;</li>
+        <li>scramble, undo, step-by-step restore, solved detection and per-face solved counting.</li>
+      </ul>
+      <p>
+        Source and documentation:
+        <a href="https://github.com/runoob-coder/flutter-magic-cube" rel="noopener">github.com/runoob-coder/flutter-magic-cube</a>
+      </p>
+    </div>
+  </noscript>
+</body>
+</html>

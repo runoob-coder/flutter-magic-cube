@@ -1,0 +1,79 @@
+name: Build & Deploy Flutter Web
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "example/**"
+      - "lib/**"
+      - "fonts/**"
+      - "pubspec.yaml"
+      - ".github/workflows/deploy_web.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "example/**"
+      - "lib/**"
+      - "fonts/**"
+      - "pubspec.yaml"
+      - ".github/workflows/deploy_web.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.47.x"
+          channel: stable
+          cache: true
+
+      - name: Flutter doctor
+        run: flutter doctor -v
+
+      - name: Install package dependencies
+        run: flutter pub get
+
+      - name: Install example dependencies
+        working-directory: example
+        run: flutter pub get
+
+      # Quality gates — run before the (slower) web build so PRs fail fast.
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze package
+        run: flutter analyze
+
+      - name: Test package
+        run: flutter test
+
+      - name: Analyze example
+        run: flutter analyze
+        working-directory: example
+
+      - name: Test example
+        run: flutter test
+        working-directory: example
+
+      - name: Build web
+        working-directory: example
+        run: flutter build web --base-href "/flutter-magic-cube/" --release
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: example/build/web
+          publish_branch: gh-pages
+          force_orphan: true

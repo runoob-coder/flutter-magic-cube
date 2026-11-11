@@ -1,0 +1,56 @@
+{
+    "id": "/",
+    "name": "magic_cube — 3D Rubik's Cube for Flutter",
+    "short_name": "Magic Cube",
+    "description": "A real 3D Rubik's cube built with pure Flutter: turn layers by dragging stickers, orbit with inertia, execute standard notation. No 3D engine, no plugins. 纯 Flutter 实现的 3D 魔方组件。",
+    "start_url": ".",
+    "scope": ".",
+    "display": "standalone",
+    "display_override": [
+        "standalone",
+        "minimal-ui"
+    ],
+    "orientation": "any",
+    "background_color": "#121216",
+    "theme_color": "#121216",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": [
+        "developer",
+        "education",
+        "games"
+    ],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

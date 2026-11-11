@@ -1,0 +1,48 @@
+name: magic_cube
+description: "A pure Flutter 3D Rubik's cube widget with draggable layer turns, free whole-cube rotation, standard notation moves, scrambling and undo."
+version: 1.0.0
+repository: https://github.com/runoob-coder/flutter-magic-cube
+homepage: https://runoob-coder.github.io/flutter-magic-cube
+issue_tracker: https://github.com/runoob-coder/flutter-magic-cube/issues
+topics:
+  - magic-cube
+  - rubiks-cube
+  - cube-3d
+  - puzzle
+  - widget
+
+screenshots:
+  - description: "Rubik's Magic Cube"
+    path: rubiks-magic-cube.png
+  - description: "Default solved cube (classic theme)"
+    path: screenshots/01_solved_default.png
+  - description: "Pastel theme"
+    path: screenshots/17_theme_pastel.png
+  - description: "Neon theme"
+    path: screenshots/18_theme_neon.png
+  - description: "Flat theme (no thickness or shadows)"
+    path: screenshots/16_theme_flat.png
+  - description: "Centre-piece logo (Flutter logo)"
+    path: screenshots/21_center_logo.png
+  - description: "9×9 solved"
+    path: screenshots/49_size9_solved.png
+  - description: "7×7 scrambled"
+    path: screenshots/50_size7_scrambled.png
+  - description: "Rolled viewpoint"
+    path: screenshots/33_view_rolled.png
+  - description: "Inner-layer turn on a 5×5"
+    path: screenshots/40_turn_5x5_inner.png
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=3.47.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  material_ui: ^1.11.0

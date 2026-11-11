@@ -1,0 +1,16 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+    # example 是独立的 Flutter 应用，CI 里单独对它跑 flutter analyze / test。
+    - example/**
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options

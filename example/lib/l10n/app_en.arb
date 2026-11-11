@@ -1,0 +1,231 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "magic_cube — 3D Rubik's Cube for Flutter",
+  "@appTitle": {
+    "description": "Title shown in the OS task switcher; on Web it also replaces the document title after the app boots."
+  },
+
+  "themeClassic": "Classic",
+  "@themeClassic": {
+    "description": "Name of the classic color theme."
+  },
+  "themePastel": "Pastel",
+  "@themePastel": {
+    "description": "Name of the pastel color theme."
+  },
+  "themeNeon": "Neon",
+  "@themeNeon": {
+    "description": "Name of the neon color theme."
+  },
+  "themeFlat": "Flat",
+  "@themeFlat": {
+    "description": "Name of the flat color theme."
+  },
+
+  "cubeInfo": "Cube: 3x3x3 · Theme: {theme}",
+  "@cubeInfo": {
+    "description": "Caption under the cube showing its size and the current theme.",
+    "placeholders": {
+      "theme": {
+        "type": "String",
+        "example": "Classic"
+      }
+    }
+  },
+  "logoSizeLabel": "Logo size",
+  "@logoSizeLabel": {
+    "description": "Label of the slider that controls the center-logo size."
+  },
+
+  "statusIdle": "Double-tap the cube to start",
+  "@statusIdle": {
+    "description": "Timer status while waiting for a new solve."
+  },
+  "statusScrambling": "Scrambling…",
+  "@statusScrambling": {
+    "description": "Timer status while the cube is being scrambled."
+  },
+  "statusSolving": "Solving…",
+  "@statusSolving": {
+    "description": "Timer status while the solve is running."
+  },
+  "statusBestTime": "Best Time!",
+  "@statusBestTime": {
+    "description": "Timer status after a new best time was recorded."
+  },
+  "statusComplete": "Complete!",
+  "@statusComplete": {
+    "description": "Timer status after a regular solve was recorded."
+  },
+
+  "actionScramble": "Scramble",
+  "@actionScramble": {
+    "description": "Button that scrambles the cube."
+  },
+  "actionScrambling": "Scrambling…",
+  "@actionScrambling": {
+    "description": "Scramble button label while a scramble is in progress."
+  },
+  "actionUndo": "Undo",
+  "@actionUndo": {
+    "description": "Button that undoes the last move."
+  },
+  "actionUndoAll": "Restore step by step",
+  "@actionUndoAll": {
+    "description": "Button that replays every move backwards."
+  },
+  "actionResetCube": "Reset cube",
+  "@actionResetCube": {
+    "description": "Button that resets the cube and abandons the current solve."
+  },
+  "actionResetView": "Reset view",
+  "@actionResetView": {
+    "description": "Button that resets the camera orientation."
+  },
+  "actionStopRotation": "Stop rotating",
+  "@actionStopRotation": {
+    "description": "Button that stops the automatic rotation."
+  },
+  "actionAutoRotation": "Auto rotate",
+  "@actionAutoRotation": {
+    "description": "Button that starts the automatic rotation."
+  },
+  "actionHideLogo": "Hide logo",
+  "@actionHideLogo": {
+    "description": "Button that hides the center-logo."
+  },
+  "actionShowLogo": "Show logo",
+  "@actionShowLogo": {
+    "description": "Button that shows the center-logo."
+  },
+  "actionTheme": "Theme",
+  "@actionTheme": {
+    "description": "Button that cycles through the color themes."
+  },
+
+  "movesPanelTitle": "MOVES",
+  "@movesPanelTitle": {
+    "description": "Title of the move notation panel."
+  },
+  "movesHint": "Enter an algorithm, e.g. R U R' U'",
+  "@movesHint": {
+    "description": "Hint inside the algorithm text field."
+  },
+  "movesRun": "Run",
+  "@movesRun": {
+    "description": "Button that runs the typed algorithm."
+  },
+  "movesError": "Could not parse the algorithm. Use notation like R U R' U'.",
+  "@movesError": {
+    "description": "Error shown when the typed algorithm cannot be parsed."
+  },
+
+  "progressPanelTitle": "PROGRESS",
+  "@progressPanelTitle": {
+    "description": "Title of the solve progress panel."
+  },
+  "progressSolvedFaces": "Solved faces",
+  "@progressSolvedFaces": {
+    "description": "Label of the solved-face counter."
+  },
+  "progressMoveCount": "Moves",
+  "@progressMoveCount": {
+    "description": "Label of the move counter."
+  },
+  "progressHint": "Drag on the cube to turn a layer. Drag outside the cube to orbit the view.",
+  "@progressHint": {
+    "description": "Instruction shown when there is no move history yet."
+  },
+
+  "statsPanelTitle": "STATS",
+  "@statsPanelTitle": {
+    "description": "Title of the results panel."
+  },
+  "statsRecent": "RECENT",
+  "@statsRecent": {
+    "description": "Title of the recent results section."
+  },
+  "statsTotalSolves": "Total solves",
+  "@statsTotalSolves": {
+    "description": "Label of the total solve count."
+  },
+  "statsBestTime": "Best time",
+  "@statsBestTime": {
+    "description": "Label of the fastest result."
+  },
+  "statsWorstTime": "Worst time",
+  "@statsWorstTime": {
+    "description": "Label of the slowest result."
+  },
+  "statsAverageOf5": "Average of 5",
+  "@statsAverageOf5": {
+    "description": "Label of the trimmed average of the last 5 results."
+  },
+  "statsAverageOf12": "Average of 12",
+  "@statsAverageOf12": {
+    "description": "Label of the trimmed average of the last 12 results."
+  },
+
+  "navTitle": "magic_cube demo",
+  "@navTitle": {
+    "description": "Short title shown in the responsive top bar."
+  },
+  "navMenuLabel": "Actions",
+  "@navMenuLabel": {
+    "description": "Label of the button that opens the compact-screen actions menu."
+  },
+  "navMenuOpenHint": "Open actions menu",
+  "@navMenuOpenHint": {
+    "description": "Accessibility hint for opening the compact-screen actions menu."
+  },
+  "navMenuCloseHint": "Close actions menu",
+  "@navMenuCloseHint": {
+    "description": "Accessibility hint for closing the compact-screen actions menu."
+  },
+  "sectionData": "STATS & PROGRESS",
+  "@sectionData": {
+    "description": "Title of the collapsible stats and progress section on phones."
+  },
+  "sectionMoves": "MOVES & ALGORITHM",
+  "@sectionMoves": {
+    "description": "Title of the collapsible moves and algorithm section on phones."
+  },
+  "sectionAppearance": "APPEARANCE",
+  "@sectionAppearance": {
+    "description": "Title of the collapsible appearance section on phones."
+  },
+  "expandHint": "Expand section",
+  "@expandHint": {
+    "description": "Accessibility hint for a collapsed section header."
+  },
+  "collapseHint": "Collapse section",
+  "@collapseHint": {
+    "description": "Accessibility hint for an expanded section header."
+  },
+
+  "languageLabel": "Language",
+  "@languageLabel": {
+    "description": "Accessibility label of the language switcher in the top bar."
+  },
+  "languageSystem": "Follow system",
+  "@languageSystem": {
+    "description": "Option that makes the UI follow the device language again."
+  },
+  "languageEnglish": "English",
+  "@languageEnglish": {
+    "description": "English option in the language switcher."
+  },
+  "languageChinese": "Simplified Chinese",
+  "@languageChinese": {
+    "description": "Simplified Chinese option in the language switcher."
+  },
+  "languageMenuOpenHint": "Choose display language",
+  "@languageMenuOpenHint": {
+    "description": "Accessibility hint for opening the language switcher."
+  },
+  "languageMenuCloseHint": "Close language menu",
+  "@languageMenuCloseHint": {
+    "description": "Accessibility hint for closing the language switcher."
+  }
+}
