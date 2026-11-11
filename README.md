@@ -221,7 +221,7 @@ MagicCube(
 
 ## 📚 [API reference](https://pub.dev/documentation/magic_cube/latest/)
 
-### 🧩 `MagicCube`
+### 🧩 [MagicCube](https://pub.dev/documentation/magic_cube/latest/magic_cube/MagicCube-class.html)
 
 | Property | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -248,7 +248,7 @@ MagicCube(
 | `onMove` | `ValueChanged<CubeMove>?` | `null` | Called only when a gesture turn commits. |
 | `onViewChanged` | `ValueChanged<CubeView>?` | `null` | Called on yaw/pitch changes. |
 
-### 🎛️ `MagicCubeController`
+### 🎛️ [MagicCubeController](https://pub.dev/documentation/magic_cube/latest/magic_cube/MagicCubeController-class.html)
 
 | Constructor argument | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -272,7 +272,7 @@ MagicCube(
 | `onMoveCommitted` | Low-level callback fired exactly once per committed gesture move. |
 
 
-### 🎨 `CubeTheme`
+### 🎨 [CubeTheme](https://pub.dev/documentation/magic_cube/latest/magic_cube/CubeTheme-class.html)
 
 | Property | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -297,7 +297,7 @@ MagicCube(
 
 Presets: `CubeTheme.classic()`, `.pastel()`, `.neon()`, `.flat()`. `copyWith` overrides fields (an explicit `centerLogo: null` clears the logo); `withLogo` applies only the three logo shortcuts; `faceColors` returns the six colours in face-index order. Equality covers every rendering field because painters key their caches by the theme object.
 
-### 🔤 Notation, state & rendering helpers
+### 🔤 [Notation, state & rendering helpers](https://pub.dev/documentation/magic_cube/latest/magic_cube/)
 
 | Symbol | Purpose |
 | --- | --- |

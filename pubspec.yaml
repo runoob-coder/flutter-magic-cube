@@ -1,9 +1,11 @@
 name: magic_cube
 description: "A pure Flutter 3D Rubik's cube widget with draggable layer turns, free whole-cube rotation, standard notation moves, scrambling and undo."
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/runoob-coder/flutter-magic-cube
 homepage: https://runoob-coder.github.io/flutter-magic-cube
 issue_tracker: https://github.com/runoob-coder/flutter-magic-cube/issues
+documentation: https://pub.dev/documentation/magic_cube/latest/magic_cube/
+
 topics:
   - magic-cube
   - rubiks-cube

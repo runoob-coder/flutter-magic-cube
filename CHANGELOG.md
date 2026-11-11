@@ -1,3 +1,7 @@
+## 1.0.1
+
+- 📝 **Docs**: improved the documentation.
+
 ## 1.0.0
 
 - 👆 **Gestures** — drag a sticker to turn its layer (axis auto-detected, snaps to the nearest 90°); drag outside the cube to orbit with inertia, or use two fingers to orbit while the in-progress turn smoothly rolls back.

@@ -221,7 +221,7 @@ MagicCube(
 
 ## 📚 [API 参考](https://pub-web.flutter-io.cn/documentation/magic_cube/latest/)
 
-### 🧩 `MagicCube`
+### 🧩 [MagicCube](https://pub-web.flutter-io.cn/documentation/magic_cube/latest/magic_cube/MagicCube-class.html)
 
 | 参数 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
@@ -248,7 +248,7 @@ MagicCube(
 | `onMove` | `ValueChanged<CubeMove>?` | `null` | 仅在手势转动落定时回调。 |
 | `onViewChanged` | `ValueChanged<CubeView>?` | `null` | 偏航 / 俯仰变化时回调。 |
 
-### 🎛️ `MagicCubeController`
+### 🎛️ [MagicCubeController](https://pub-web.flutter-io.cn/documentation/magic_cube/latest/magic_cube/MagicCubeController-class.html)
 
 | 构造参数 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
@@ -272,7 +272,7 @@ MagicCube(
 | `onMoveCommitted` | 底层回调：每次手势转动落定恰好触发一次。 |
 
 
-### 🎨 `CubeTheme`
+### 🎨 [CubeTheme](https://pub-web.flutter-io.cn/documentation/magic_cube/latest/magic_cube/CubeTheme-class.html)
 
 | 字段 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
@@ -297,7 +297,7 @@ MagicCube(
 
 预设：`CubeTheme.classic()`、`.pastel()`、`.neon()`、`.flat()`。`copyWith` 覆盖指定字段（显式传 `centerLogo: null` 可清空 logo）；`withLogo` 只覆盖三个 logo 快捷参数；`faceColors` 按面索引顺序返回六种颜色。相等性判断覆盖全部参与渲染的字段，因为绘制层以主题对象作为缓存键。
 
-### 🔤 记号、状态与渲染工具
+### 🔤 [记号、状态与渲染工具](https://pub-web.flutter-io.cn/documentation/magic_cube/latest/magic_cube/)
 
 | 符号 | 用途 |
 | --- | --- |
