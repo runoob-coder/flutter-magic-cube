@@ -33,6 +33,12 @@ Language: English | [简体中文](https://github.com/runoob-coder/flutter-magic
 - 📐 **Pixel-adaptive quality** — rounded outlines tessellate from their on-screen radius (≤0.12 px chord deviation), and side-wall silhouettes get a stencil-free hairline anti-aliasing stroke that works on Web.
 - 🧪 **Testable by design** — without a bound `TickerProvider` (e.g. in unit tests) moves apply immediately instead of animating.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/solve.gif" width="320" style="width: 320px;" alt="magic_cube solve demo">
+</div>
+
+> A live scramble-and-solve demonstration rendered by `MagicCube`.
+
 ## 🚀 Getting started
 
 Install via pub.dev → [pub.dev/packages/magic_cube/install](https://pub.dev/packages/magic_cube/install)

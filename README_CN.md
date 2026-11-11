@@ -33,6 +33,12 @@ Language: [English](README.md) | 简体中文
 - 📐 **按像素自适应画质** —— 圆角轮廓按屏幕像素半径细分（弦高 ≤0.12 px）；侧壁剪影用零宽度 hairline 描边补抗锯齿（不依赖 stencil，Web 同样有效）。
 - 🧪 **天然可测试** —— 未绑定 `TickerProvider` 时（例如单元测试）转动立即生效，不播放动画。
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/solve.gif" width="320" style="width: 320px;" alt="magic_cube 还原演示">
+</div>
+
+> `MagicCube` 实时渲染的打乱—还原演示。
+
 ## 🚀 快速开始
 
 通过 pub.dev 安装 → [pub-web.flutter-io.cn/packages/magic_cube/install](https://pub-web.flutter-io.cn/packages/magic_cube/install)
