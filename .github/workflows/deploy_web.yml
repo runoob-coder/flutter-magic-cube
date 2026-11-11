@@ -31,7 +31,8 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.47.x"
+          # 固定与本地开发环境一致的补丁版本，避免 dart format 在 3.13.7 / 3.13.8 间输出差异导致 CI 误判未格式化。
+          flutter-version: "3.47.8"
           channel: stable
           cache: true
 
