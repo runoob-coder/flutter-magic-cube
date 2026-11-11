@@ -261,27 +261,25 @@ void main() {
       reason: '未手动选择时不应锁定 locale',
     );
     expect(find.text(zhL10n.statusIdle), findsOneWidget, reason: '应跟随系统中文');
-    expect(find.text('AUTO'), findsOneWidget, reason: '未手动选择时显示 AUTO');
+    // 未手动选择时，语言按钮只显示语言图标，没有 AUTO 文本。
+    expect(find.byIcon(Icons.language), findsOneWidget);
 
     // 手动选英语：覆盖系统中文。
-    await tester.tap(find.text('AUTO'));
+    await tester.tap(find.byIcon(Icons.language));
     await tester.pump();
     expect(
       tester.getSize(find.byKey(const Key('language-menu'))).width,
       lessThanOrEqualTo(240),
       reason: '语言菜单应是紧凑下拉，不能占满屏宽',
     );
-    expect(find.byIcon(Icons.brightness_auto), findsOneWidget);
-    expect(find.byIcon(Icons.abc), findsOneWidget);
-    expect(find.byIcon(Icons.translate), findsOneWidget);
     expect(find.text(zhL10n.languageSystem), findsOneWidget);
     expect(find.text(zhL10n.languageEnglish), findsOneWidget);
+    expect(find.text(zhL10n.languageChinese), findsOneWidget);
     await tester.tap(find.text(zhL10n.languageEnglish));
     await tester.pump();
     await tester.pump();
     expect(tester.widget<MaterialApp>(find.byType(MaterialApp)).locale, en);
     expect(find.text(enL10n.statusIdle), findsOneWidget);
-    expect(find.text('EN'), findsOneWidget);
 
     // 系统语言来回变化不应改变已选择的语言。
     await tester.binding.setLocales(<Locale>[en]);
@@ -293,13 +291,13 @@ void main() {
     expect(find.text(zhL10n.statusIdle), findsNothing);
 
     // 选择「跟随系统」：重新跟随中文系统语言。
-    await tester.tap(find.text('EN'));
+    await tester.tap(find.byIcon(Icons.language));
     await tester.pump();
     await tester.tap(find.text(enL10n.languageSystem));
     await tester.pump();
     await tester.pump();
     expect(tester.widget<MaterialApp>(find.byType(MaterialApp)).locale, isNull);
     expect(find.text(zhL10n.statusIdle), findsOneWidget);
-    expect(find.text('AUTO'), findsOneWidget);
+    expect(find.byIcon(Icons.language), findsOneWidget);
   });
 }

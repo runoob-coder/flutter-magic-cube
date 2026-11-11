@@ -105,18 +105,24 @@ void main() {
     final stats = tester.getRect(_panelOf(l10n.statsPanelTitle));
     expect(cube.right, lessThan(stats.left), reason: '魔方应在左栏');
     expect(stats.right, lessThan(1440));
-    // 顶部栏是固定高度；快捷操作必须保持单行，长英文文案也不能换行溢出。
-    expect(
-      find.descendant(
-        of: find.byType(DemoAppBar),
-        matching: find.byWidgetPredicate(
-          (Widget widget) =>
-              widget is SingleChildScrollView &&
-              widget.scrollDirection == Axis.horizontal,
-        ),
+    // 桌面顶部栏直接显示核心快捷操作（拧乱 / 撤销 / 复原），长英文文案也不能换行溢出。
+    expect(find.text(l10n.actionScramble), findsOneWidget);
+    expect(find.text(l10n.actionUndo), findsOneWidget);
+    expect(find.text(l10n.actionResetCube), findsOneWidget);
+    final Rect scrambleBtn = tester.getRect(
+      find.ancestor(
+        of: find.text(l10n.actionScramble),
+        matching: find.byType(AppButton),
       ),
-      findsOneWidget,
     );
+    final Rect resetCubeBtn = tester.getRect(
+      find.ancestor(
+        of: find.text(l10n.actionResetCube),
+        matching: find.byType(AppButton),
+      ),
+    );
+    expect(scrambleBtn.top, closeTo(resetCubeBtn.top, 1),
+        reason: '三个核心操作应在同一行，不能换行');
     expect(tester.takeException(), isNull);
   });
 
