@@ -53,5 +53,7 @@
   "languageEnglish": "英语",
   "languageChinese": "简体中文",
   "languageMenuOpenHint": "选择显示语言",
-  "languageMenuCloseHint": "关闭语言菜单"
+  "languageMenuCloseHint": "关闭语言菜单",
+  "githubLink": "GitHub",
+  "githubLinkHint": "在 GitHub 上打开源码仓库"
 }

@@ -227,5 +227,14 @@
   "languageMenuCloseHint": "Close language menu",
   "@languageMenuCloseHint": {
     "description": "Accessibility hint for closing the language switcher."
+  },
+
+  "githubLink": "GitHub",
+  "@githubLink": {
+    "description": "Label of the button that opens the project repository on GitHub."
+  },
+  "githubLinkHint": "Open the source repository on GitHub",
+  "@githubLinkHint": {
+    "description": "Accessibility hint for the GitHub repository button."
   }
 }

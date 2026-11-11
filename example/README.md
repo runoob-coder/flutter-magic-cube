@@ -1,5 +1,7 @@
 # magic_cube example
 
+Source: <https://github.com/runoob-coder/flutter-magic-cube/tree/main/example>
+
 Demonstrates the full usage of the [`magic_cube`](../) widget:
 
 - **Double-tap the cube**: scrambles automatically and starts the timer; once solved it

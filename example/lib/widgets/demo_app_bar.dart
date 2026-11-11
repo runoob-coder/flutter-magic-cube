@@ -1,10 +1,16 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:magic_cube_example/l10n/app_localizations.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:simple_icons/simple_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../app_theme.dart';
 import '../responsive.dart';
+
+/// Source repository on GitHub, opened by the header link button.
+const String _githubUrl = 'https://github.com/runoob-coder/flutter-magic-cube';
 
 /// Which overlay is currently open. Only one can be open at a time.
 enum _OpenMenu { none, actions, language }
@@ -141,6 +147,32 @@ class _DemoAppBarState extends State<DemoAppBar> {
   }
 
   Widget _header(AppLocalizations l10n, bool showMenuButton) {
+    final Widget leading = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        const Icon(Icons.threed_rotation, color: AppPalette.accent, size: 22),
+        const SizedBox(width: AppPalette.spaceSm),
+        Text(
+          l10n.navTitle,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: AppPalette.statValue.copyWith(fontSize: 16),
+        ),
+      ],
+    );
+    final List<Widget> trailing = <Widget>[
+      if (showMenuButton)
+        _menuButton(l10n)
+      else
+        widget.quickActions,
+      if (_languageEnabled) ...<Widget>[
+        const SizedBox(width: AppPalette.spaceXs),
+        _languageButton(l10n),
+      ],
+      const SizedBox(width: AppPalette.spaceXs),
+      _githubButton(l10n),
+    ];
+
     return Container(
       height: AppMetrics.headerHeight,
       padding: EdgeInsets.symmetric(horizontal: widget.layout.gutter),
@@ -148,34 +180,48 @@ class _DemoAppBarState extends State<DemoAppBar> {
         border: Border(bottom: BorderSide(color: AppPalette.border)),
       ),
       child: Row(
+        // The title stays on the left; the expanding spacer pushes the
+        // actions (quick actions on desktop, the menu button on smaller
+        // screens) plus the language and GitHub buttons to the right.
         children: <Widget>[
-          const Icon(Icons.threed_rotation, color: AppPalette.accent, size: 22),
-          const SizedBox(width: AppPalette.spaceSm),
-          Expanded(
-            child: Text(
-              l10n.navTitle,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: AppPalette.statValue.copyWith(fontSize: 16),
+          Expanded(child: leading),
+          ...trailing,
+        ],
+      ),
+    );
+  }
+
+  Widget _githubButton(AppLocalizations l10n) {
+    return Semantics(
+      button: true,
+      label: l10n.githubLink,
+      hint: l10n.githubLinkHint,
+      child: Material(
+        color: AppPalette.surfaceStrong,
+        shape: const StadiumBorder(
+          side: BorderSide(color: AppPalette.buttonBorder),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () => unawaited(
+            launchUrl(
+              Uri.parse(_githubUrl),
+              mode: LaunchMode.externalApplication,
             ),
           ),
-          if (showMenuButton)
-            _menuButton(l10n)
-          else
-            // A Wrap would put a long label (e.g. "Restore step by step")
-            // on a second row and paint it over the content below the fixed
-            // 56px bar. An unbounded horizontal viewport keeps one row.
-            Flexible(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: widget.quickActions,
+          customBorder: const StadiumBorder(),
+          child: const SizedBox(
+            width: AppPalette.minTouchTarget,
+            height: AppPalette.minTouchTarget,
+            child: Center(
+              child: Icon(
+                SimpleIcons.github,
+                size: 18,
+                color: AppPalette.textPrimary,
               ),
             ),
-          if (_languageEnabled) ...<Widget>[
-            const SizedBox(width: AppPalette.spaceXs),
-            _languageButton(l10n),
-          ],
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -239,13 +285,8 @@ class _DemoAppBarState extends State<DemoAppBar> {
     final Color foreground = active
         ? const Color(0xFF1B1B1B)
         : AppPalette.textPrimary;
-    // Short codes stay language-independent, so the button is recognisable
-    // no matter which language is currently selected.
-    final String shortLabel = switch (widget.locale?.languageCode) {
-      'en' => 'EN',
-      'zh' => '中文',
-      _ => 'AUTO',
-    };
+    // A font icon keeps the button recognisable no matter which language is
+    // currently selected.
     return Semantics(
       button: true,
       label: l10n.languageLabel,
@@ -261,26 +302,14 @@ class _DemoAppBarState extends State<DemoAppBar> {
             () => _open = active ? _OpenMenu.none : _OpenMenu.language,
           ),
           customBorder: const StadiumBorder(),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              minWidth: AppPalette.minTouchTarget,
-              minHeight: AppPalette.minTouchTarget,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppPalette.spaceSm,
-              ),
-              child: Center(
-                widthFactor: 1,
-                heightFactor: 1,
-                child: Text(
-                  shortLabel,
-                  style: TextStyle(
-                    color: foreground,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+          child: SizedBox(
+            width: AppPalette.minTouchTarget,
+            height: AppPalette.minTouchTarget,
+            child: Center(
+              child: Icon(
+                Icons.language,
+                size: 18,
+                color: foreground,
               ),
             ),
           ),
@@ -295,19 +324,16 @@ class _DemoAppBarState extends State<DemoAppBar> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         _languageOption(
-          icon: Icons.brightness_auto,
           label: l10n.languageSystem,
           selected: widget.locale == null,
           onTap: () => _chooseLanguage(null),
         ),
         _languageOption(
-          icon: Icons.abc,
           label: l10n.languageEnglish,
           selected: widget.locale?.languageCode == 'en',
           onTap: () => _chooseLanguage(const Locale('en')),
         ),
         _languageOption(
-          icon: Icons.translate,
           label: l10n.languageChinese,
           selected: widget.locale?.languageCode == 'zh',
           onTap: () => _chooseLanguage(const Locale('zh')),
@@ -317,7 +343,6 @@ class _DemoAppBarState extends State<DemoAppBar> {
   }
 
   Widget _languageOption({
-    required IconData icon,
     required String label,
     required bool selected,
     required VoidCallback onTap,
@@ -341,8 +366,6 @@ class _DemoAppBarState extends State<DemoAppBar> {
               ),
               child: Row(
                 children: <Widget>[
-                  Icon(icon, size: 18, color: foreground),
-                  const SizedBox(width: AppPalette.spaceSm),
                   Expanded(
                     child: Text(
                       label,
