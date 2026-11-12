@@ -1,7 +1,7 @@
-# magic_cube
+# 3D魔方
 
 <div align="center">
-  <a href="https://github.com/runoob-coder/flutter-magic-cube" target="_blank" rel="noopener"> 
+  <a href="https://runoob-coder.github.io/flutter-magic-cube" target="_blank" rel="noopener"> 
     <img src="https://raw.githubusercontent.com/runoob-coder/flutter-magic-cube/main/rubiks-magic-cube.png" width="200" style="width: 200px;" alt="magic_cube">
   </a>
 </div>
